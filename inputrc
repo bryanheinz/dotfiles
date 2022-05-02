@@ -1,0 +1,5 @@
+# bash startup/config file
+# ~/.inputrc
+
+# ignore case
+set completion-ignore-case on
