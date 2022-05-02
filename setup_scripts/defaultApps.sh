@@ -54,3 +54,7 @@ text_editor_uti=("com.adobe.actionscript" \
 for uti in "${text_editor_uti[@]}"; do
     "$swda" setHandler --app "$text_editor" --UTI "$uti"
 done
+
+"$swda" setHandler \
+    --app "/Applications/TextMate.app" \
+    --UTI com.brettterpstra.bunch.bunchfile
