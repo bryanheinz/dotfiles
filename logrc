@@ -1,0 +1,11 @@
+show:
+    --last 5m
+    --info
+    --debug
+    --color always
+
+predicate:
+    app 'process == "application"'
+    mdm 'subsystem == "com.apple.ManagedClient"'
+    launchd 'subsystem == "launchd"'
+    launchd_msg 'eventMessage contains "launchd"'
