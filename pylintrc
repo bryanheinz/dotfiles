@@ -94,7 +94,8 @@ disable=raw-checker-failed,
         consider-using-sys-exit,
         logging-fstring-interpolation,
         broad-except,
-        bare-except
+        bare-except,
+        invalid-name
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -395,7 +396,8 @@ function-naming-style=snake_case
 #function-rgx=
 
 # Good variable names which should always be accepted, separated by a comma.
-good-names=e,
+good-names=d,
+           e,
            i,
            j,
            k,
