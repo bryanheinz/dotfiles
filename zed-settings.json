@@ -1,10 +1,12 @@
 {
     "ui_font_size": 19,
     "buffer_font_size": 22,
+    "buffer_font_family": "Source Code Pro",
     "hard_tabs": false,
     "tab_size": 4,
     "show_whitespaces": "all",
-    "soft_wrap": "preferred_line_length",
+    "soft_wrap": "editor_width",
+    "remove_trailing_whitespace_on_save": false,
     "theme": {
         "mode": "system",
         "light": "One Light",
@@ -15,6 +17,7 @@
         "docker-compose": true,
         "dockerfile": true,
         "html": true,
+        "ruff": true,
         "toml": true,
         "xml": true
     },
@@ -27,10 +30,30 @@
     },
     "languages": {
         "Python": {
-            "preferred_line_length": 80
+            "preferred_line_length": 80,
+            "soft_wrap": "preferred_line_length",
+            "language_servers": ["pyright", "ruff"],
+            "format_on_save": "on",
+            "formatter": [{
+                "code_actions": {
+                    "source.organizeImports.ruff": true
+                }
+            }]
         },
         "XML": {
             "hard_tabs": true
+        },
+        "JSON": {
+            "format_on_save": "off"
+        }
+    },
+    "lsp": {
+        "ruff": {
+            "initialization_options": {
+                "settings": {
+                    "lineLength": 80
+                }
+            }
         }
     }
 }
