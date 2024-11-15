@@ -34,11 +34,13 @@
             "soft_wrap": "preferred_line_length",
             "language_servers": ["pyright", "ruff"],
             "format_on_save": "on",
-            "formatter": [{
-                "code_actions": {
-                    "source.organizeImports.ruff": true
+            "formatter": [
+                {
+                    "code_actions": {
+                        "source.organizeImports.ruff": true
+                    }
                 }
-            }]
+            ]
         },
         "XML": {
             "hard_tabs": true
@@ -51,7 +53,10 @@
         "ruff": {
             "initialization_options": {
                 "settings": {
-                    "lineLength": 80
+                    "lineLength": 80,
+                    "lint": {
+                        "ignore": ["E701"]
+                    }
                 }
             }
         }
