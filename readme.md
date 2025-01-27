@@ -9,20 +9,29 @@ tl;dr clone or download this repo, symlink to `~/.files`
 https://github.com/bryanheinz/dotfiles/archive/main.tar.gz
 https://github.com/bryanheinz/dotfiles.git
 
-### Clone
+### Git
 
-```shell
+```bash
 git clone https://github.com/bryanheinz/dotfiles.git
-ln -s $(pwd)/dotfiles ~/.files
+mv dotfiles ~/.files
 ```
 
-### curl
+### Download
 
-```shell
+```bash
+# curl
 curl -L https://github.com/bryanheinz/dotfiles/archive/main.tar.gz -o dotfiles.tar.gz
+# wget
+wget https://github.com/bryanheinz/dotfiles/archive/main.tar.gz -O dotfiles.tar.gz
 tar -xzf dotfiles.tar.gz
-mkdir ~/.files
-cp -af dotfiles-main/* ~/.files/
+mv dotfiles-main ~/.files
+rm dotfiles.tar.gz
+```
+
+## EditorConfig
+
+```bash
+ln -s ~/.files/editorconfig ~/.editorconfig
 ```
 
 ## Zed Config
@@ -38,6 +47,7 @@ The docs specify `~/.zed/settings.json` as the default location for macOS, but i
 
 **Zed Setup**
 
-```shell
-/bin/ln -s ~/.files/zed-settings.json ~/.config/zed/settings.json
+```bash
+ln -s ~/.files/zed/zed-settings.json ~/.config/zed/settings.json
+ln -s ~/.files/zed/keymap.json ~/.config/zed/keymap.json
 ```
