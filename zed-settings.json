@@ -47,6 +47,9 @@
         },
         "JSON": {
             "format_on_save": "off"
+        },
+        "YAML": {
+            "tab_size": 2
         }
     },
     "lsp": {
@@ -55,7 +58,7 @@
                 "settings": {
                     "lineLength": 80,
                     "lint": {
-                        "ignore": ["E701"]
+                        "ignore": ["E701", "E722"]
                     }
                 }
             }
