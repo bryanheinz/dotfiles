@@ -1,0 +1,60 @@
+" default source
+"source $VIMRUNTIME/debian.vim " seems to be the default for Debian tiny-vim
+"source $VIMRUNTIME/defaults.vim
+" the fallback default for Debian and macOS is /usr/share/vim/vimrc
+" Debian symlinks /usr/share/vim/vimrc to /etc/vim/vimrc
+if filereadable("/usr/share/vim/vimrc")
+    source /usr/share/vim/vimrc
+else
+    source /usr/share/vim/vim*/debian.vim
+endif
+
+
+" https://dougblack.io/words/a-good-vimrc.html#ui
+set mouse-=a        " disable visual mouse
+
+set tabstop=4       " number of visual spaces per tab
+set softtabstop=4   " number of spaces in tab when editing
+set expandtab       " tabs are spaces
+
+set number          " show line numbers
+set cursorline      " highlight the current line
+set showmatch       " highlight matching [{()}]
+
+set hlsearch        " highlight search matches
+
+
+" set whitespace characters
+" https://stackoverflow.com/a/29787362/7341009
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<
+set list
+
+
+" https://nvie.com/posts/how-i-boosted-my-vim/
+set backspace=indent,eol,start    " allow backspacing over everything
+
+set autoindent                    " enable auto indent
+set copyindent                    " copy previous indent level
+set shiftwidth=4                  " 4 spaces when auto-indenting
+
+set ignorecase                    " case insensitive searching
+set smartcase                     " only case insensitive if all lowercase
+set incsearch                     " show search matches while typing
+
+set title                         " change terminal's title to filename
+
+
+" syntax highlighting
+" Debian may only have vim-tiny installed which doesn't support this
+" `sudo apt install vim` to resolve
+" https://linuxhint.com/vim_syntax_highlighting/
+:silent! syntax on
+if v:version > 802
+    set termguicolors
+    :silent! colorscheme catppuccin_mocha
+else
+    :silent! color twilight256
+endif
+
+" load haproxy syntax if installed
+:silent! au BufRead,BufNewFile haproxy* set ft=haproxy
