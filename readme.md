@@ -6,9 +6,6 @@ The goal of the repo is to collect all of my various config files into one prima
 
 tl;dr clone or download this repo, symlink to `~/.files`
 
-https://github.com/bryanheinz/dotfiles/archive/main.tar.gz
-https://github.com/bryanheinz/dotfiles.git
-
 ### Git
 
 ```bash
@@ -19,12 +16,14 @@ mv dotfiles ~/.files
 ### Download
 
 ```bash
-# curl
+# download curl
 curl -L https://github.com/bryanheinz/dotfiles/archive/main.tar.gz -o dotfiles.tar.gz
-# wget
+# download wget
 wget https://github.com/bryanheinz/dotfiles/archive/main.tar.gz -O dotfiles.tar.gz
+# install
 tar -xzf dotfiles.tar.gz
 mv dotfiles-main ~/.files
+# cleanup
 rm dotfiles.tar.gz
 ```
 
