@@ -1,4 +1,11 @@
 {
+    "assistant": {
+        "default_model": {
+            "provider": "lmstudio",
+            "model": "deepseek-coder-v2-lite-instruct-mlx"
+        },
+        "version": "2"
+    },
     "auto_update": false,
     "ui_font_size": 19,
     "buffer_font_size": 22,
@@ -67,7 +74,8 @@
                         "ignore": ["E701", "E722"]
                     }
                 }
-            }
+            },
+            "ruff.path": ["$HOME/.local/bin/ruff"]
         }
     }
 }
