@@ -42,6 +42,7 @@ set smartcase                     " only case insensitive if all lowercase
 set incsearch                     " show search matches while typing
 
 set title                         " change terminal's title to filename
+let &titleold = hostname()        " set title back to hostname after closing
 
 
 " syntax highlighting
