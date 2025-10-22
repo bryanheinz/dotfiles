@@ -28,5 +28,11 @@
         "bindings": {
             "cmd-p": "markdown::OpenPreview"
         }
+    },
+    {
+        "use_key_equivalents": true,
+        "bindings": {
+            "ctrl-cmd-b": "workspace::ToggleLeftDock"
+        }
     }
 ]

@@ -1,81 +1,81 @@
 {
-    "assistant": {
-        "default_model": {
-            "provider": "lmstudio",
-            "model": "deepseek-coder-v2-lite-instruct-mlx"
-        },
-        "version": "2"
-    },
-    "auto_update": false,
-    "ui_font_size": 19,
-    "buffer_font_size": 22,
-    "buffer_font_family": "Source Code Pro",
-    "hard_tabs": false,
-    "tab_size": 4,
-    "show_whitespaces": "all",
-    "soft_wrap": "editor_width",
-    "remove_trailing_whitespace_on_save": false,
-    "theme": {
-        "mode": "system",
-        "light": "One Light",
-        "dark": "Catppuccin Macchiato - No Italics"
-    },
-    "auto_install_extensions": {
-        "catppuccin": true,
-        "docker-compose": true,
-        "dockerfile": true,
-        "html": true,
-        "ruff": true,
-        "toml": true,
-        "xml": true
-    },
-    "indent_guides": {
-        "enabled": true,
-        "line_width": 1,
-        "active_line_width": 2,
-        "coloring": "indent_aware",
-        "background_coloring": "disabled"
-    },
-    "languages": {
-        "Python": {
-            "preferred_line_length": 80,
-            "soft_wrap": "preferred_line_length",
-            "language_servers": ["pyright", "ruff"],
-            "format_on_save": "on",
-            "formatter": [
-                {
-                    "code_actions": {
-                        "source.organizeImports.ruff": true
-                    }
-                }
-            ]
-        },
-        "XML": {
-            "hard_tabs": true
-        },
-        "JSON": {
-            "format_on_save": "off",
-            "tab_size": 2
-        },
-        "JSONC": {
-            "format_on_save": "off",
-            "tab_size": 2
-        },
-        "YAML": {
-            "tab_size": 2
+  "auto_update": false,
+  "ui_font_size": 19,
+  "buffer_font_size": 22,
+  "buffer_font_family": "Source Code Pro",
+  "hard_tabs": false,
+  "tab_size": 4,
+  "show_whitespaces": "all",
+  "soft_wrap": "editor_width",
+  "remove_trailing_whitespace_on_save": false,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Catppuccin Macchiato - No Italics"
+  },
+  "auto_install_extensions": {
+    "catppuccin": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "html": true,
+    "ruff": true,
+    "toml": true,
+    "xml": true
+  },
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 2,
+    "coloring": "indent_aware",
+    "background_coloring": "disabled"
+  },
+  "languages": {
+    "Python": {
+      "preferred_line_length": 80,
+      "soft_wrap": "preferred_line_length",
+      "language_servers": ["pyright"],
+      // "language_servers": ["pyright", "ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true
+          }
         }
+      ]
     },
-    "lsp": {
-        "ruff": {
-            "initialization_options": {
-                "settings": {
-                    "lineLength": 80,
-                    "lint": {
-                        "ignore": ["E701", "E722"]
-                    }
-                }
-            },
-            "ruff.path": ["$HOME/.local/bin/ruff"]
-        }
+    "XML": {
+      "hard_tabs": true
+    },
+    "JSON": {
+      "format_on_save": "off",
+      "tab_size": 2
+    },
+    "JSONC": {
+      "format_on_save": "off",
+      "tab_size": 2
+    },
+    "YAML": {
+      "tab_size": 2
     }
+  },
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "lineLength": 80,
+          "lint": {
+            "ignore": ["E701", "E722"]
+          }
+        }
+      },
+      "ruff.path": ["$HOME/.local/bin/ruff"]
+    }
+  },
+  "gutter": {
+    "line_numbers": true,
+    "breakpoints": false,
+    "runnables": false,
+    "min_line_number_digits": 2
+  }
 }
