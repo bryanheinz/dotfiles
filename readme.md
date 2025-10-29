@@ -33,6 +33,12 @@ rm dotfiles.tar.gz
 ln -s ~/.files/editorconfig ~/.editorconfig
 ```
 
+## tmux
+
+```bash
+ln -s ~/.files/tmux.conf ~/.tmux.conf
+```
+
 ## Zed Config
 
 [Zed Docs](https://zed.dev/docs/)
