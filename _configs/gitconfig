@@ -1,0 +1,13 @@
+[include]
+    path = ~/.love/gitconfig_user
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+[alias]
+    # Source - https://stackoverflow.com/a/78580909
+	open = "!f() { open $(git config remote.${1:-origin}.url \
+        | sed -E 's/:([^\\/])/\\/\\1/g' \
+        | sed -e 's/ssh:\\/\\///g' \
+        | sed -e 's/git@/https:\\/\\//g' \
+        | sed -e 's/\\.git$//g'); }; f"
