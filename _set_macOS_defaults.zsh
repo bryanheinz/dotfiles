@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 defaults="/usr/bin/defaults"
 

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 swda=/usr/local/bin/swda
 text_editor=/Applications/Nova.app
