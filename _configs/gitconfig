@@ -1,5 +1,5 @@
 [include]
-    path = ~/.love/gitconfig_user
+    path = ~/.love/git_extended.conf
 [pull]
 	ff = only
 [init]
