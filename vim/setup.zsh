@@ -21,5 +21,8 @@ download "https://www.vim.org/scripts/download_script.php?src_id=6924" \
     "$HOME/.vim/syntax/haproxy.vim"
 
 # install vimrc
-download "https://raw.githubusercontent.com/bryanheinz/dotfiles/main/vim/vimrc" \
-    "$HOME/.vimrc"
+if [[ -e "$HOME/.files/vim/vimrc" ]]; then
+    ln -s "$HOME/.files/vim/vimrc" "$HOME/.vimrc"
+else
+    download "https://raw.githubusercontent.com/bryanheinz/dotfiles/main/vim/vimrc" "$HOME/.vimrc"
+fi
