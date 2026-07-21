@@ -39,15 +39,6 @@ else
 fi
 # -- #
 
-# !Python UV setup #
-if [[ -e $(which uv) ]]; then
-    eval "$(uv generate-shell-completion zsh)"
-fi
-if [[ -e $(which uvx) ]]; then
-    eval "$(uvx --generate-shell-completion zsh)"
-fi
-# -- #
-
 # !MISC #
 # disable paste escaping with curl
 DISABLE_MAGIC_FUNCTIONS=true
@@ -118,8 +109,16 @@ zstyle ':completion:*' expand prefix suffix
 # enable the "more powerful" completion system
 # -u suppresses warnings, see https://stackoverflow.com/a/43544733
 autoload -Uz compinit && compinit -u
-# -- #
 
+# Python UV completion setup
+# must happen after general completions configured
+if [[ -e $(which uv) ]]; then
+    eval "$(uv generate-shell-completion zsh)"
+fi
+if [[ -e $(which uvx) ]]; then
+    eval "$(uvx --generate-shell-completion zsh)"
+fi
+# -- #
 
 # !Git #
 # test if git is installed on the machine. if it's not, don't load git modules.
