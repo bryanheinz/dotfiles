@@ -4,13 +4,13 @@ The goal of the repo is to collect all of my various config files into one prima
 
 ## Setup
 
-tl;dr clone or download this repo, symlink to `~/.files`
+tl;dr clone or download this repo, then rename or symlink to `~/.files`
 
 ### Git
 
 ```bash
-git clone https://github.com/bryanheinz/dotfiles.git
-mv dotfiles ~/.files
+cd ~
+git clone https://github.com/bryanheinz/dotfiles.git .files
 ```
 
 ### Download
@@ -27,16 +27,34 @@ mv dotfiles-main ~/.files
 rm dotfiles.tar.gz
 ```
 
-## EditorConfig
+## General Configs
 
-```bash
-ln -s ~/.files/editorconfig ~/.editorconfig
+```shell
+# EditorConfig https://editorconfig.org
+ln -s ~/.files/_configs/editorconfig ~/.editorconfig
+
+# gitconfig
+ln -s ~/.files/_configs/gitconfig ~/.gitconfig
+
+# inputrc for ash/bash on Synology
+ln -s ~/.files/_configs/inputrc ~/.inputrc
+
+# logrc for macOS `log`
+ln -s ~/.files/_configs/logrc ~/.logrc
+
+# pylint
+ln -s ~/.files/_configs/pylintrc ~/.pylintrc
+
+# tmux
+ln -s ~/.files/_configs/tmux.conf ~/.tmux.conf
 ```
 
-## tmux
+## VIM Setup
 
-```bash
-ln -s ~/.files/tmux.conf ~/.tmux.conf
+Run the `vim/setup.zsh` script
+
+```shell
+~/.files/vim/setup.zsh
 ```
 
 ## Zed Config
@@ -56,3 +74,15 @@ The docs specify `~/.zed/settings.json` as the default location for macOS, but i
 ln -s ~/.files/zed/zed-settings.json ~/.config/zed/settings.json
 ln -s ~/.files/zed/keymap.json ~/.config/zed/keymap.json
 ```
+
+## ZSH Setup
+
+This is most of my ZSH config. Built to pull aspects I liked from oh-my-zsh, but feels faster and without the need for constant updating. It should work with macOS and Debian Linux.
+
+```shell
+mkdir /usr/local/zsh-config
+ln -s ~/.files/zsh /usr/local/zsh-config/zsh
+ln -s ~/.files/zsh/zshrc.zsh ~/.zshrc
+```
+
+The ZSH folder is linked into `/usr/local` so that the zshrc config can be linked into all user accounts on the system if wanted.
