@@ -1,4 +1,11 @@
 {
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "cli_default_open_behavior": "new_window",
   "auto_update": false,
   "ui_font_size": 19,
   "buffer_font_size": 22,
@@ -32,17 +39,10 @@
   "languages": {
     "Python": {
       "preferred_line_length": 80,
-      "soft_wrap": "preferred_line_length",
+      "soft_wrap": "prefer_line",
       "language_servers": ["pyright"],
       // "language_servers": ["pyright", "ruff"],
-      "format_on_save": "on",
-      "formatter": [
-        {
-          "code_actions": {
-            "source.organizeImports.ruff": true
-          }
-        }
-      ]
+      "format_on_save": "on"
     },
     "XML": {
       "hard_tabs": true
@@ -69,7 +69,6 @@
           }
         }
       },
-      "ruff.path": ["$HOME/.local/bin/ruff"]
     }
   },
   "gutter": {
