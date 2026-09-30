@@ -5,8 +5,7 @@ create_link () {
     if [[ -L "$2" ]]; then
         # a link already exists, re-link
         echo "re-linking ${2:t}"
-        rm "$2"
-        ln -s "$1" "$2"
+        ln -sf "$1" "$2"
     elif [[ -e "$2" ]]; then
         # a file exists, but isn't a link
         # backup existing file and link
