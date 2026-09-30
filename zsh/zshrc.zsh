@@ -188,14 +188,13 @@ fi
 # -- #
 
 # !Override imports #
-# .love - https://overcast.fm/+hYDenHcLc
 # load ZSH configs to override anything in this config
 # local-only ZSH file
-if [[ -f "$HOME/.love/local_rc.zsh" ]]; then
-    . "$HOME/.love/local_rc.zsh"
+if [[ -f "${HOME}/.local/share/zsh/local_rc.zsh" ]]; then
+    . "${HOME}/.local/share/zsh/local_rc.zsh"
 fi
 # cloud ZSH file
-if [[ -f "$HOME/.love/cloud_rc.zsh" ]]; then
-    . "$HOME/.love/cloud_rc.zsh"
+if [[ -f "${HOME}/.local/share/zsh/cloud_rc.zsh" ]]; then
+    . "${HOME}/.local/share/zsh/cloud_rc.zsh"
 fi
 # -- #
