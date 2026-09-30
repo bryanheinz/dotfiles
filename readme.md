@@ -80,9 +80,5 @@ ln -s ~/.files/zed/keymap.json ~/.config/zed/keymap.json
 This is most of my ZSH config. Built to pull aspects I liked from oh-my-zsh, but feels faster and without the need for constant updating. It should work with macOS and Debian Linux.
 
 ```shell
-mkdir /usr/local/zsh-config
-ln -s ~/.files/zsh /usr/local/zsh-config/zsh
-ln -s ~/.files/zsh/zshrc.zsh ~/.zshrc
+echo 'source "$HOME/.files/zsh/zshrc.zsh"' >> ~/.zshrc
 ```
-
-The ZSH folder is linked into `/usr/local` so that the zshrc config can be linked into all user accounts on the system if wanted.
