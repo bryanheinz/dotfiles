@@ -6,18 +6,11 @@ This is my lite-ish ZSH config that takes my favorite parts from oh-my-zsh witho
 
 To install the ZSH config without the rest of dotfiles, follow these steps:
 
-1. Clone repo into `/usr/local`
-
 ```shell
-cd /usr/local
-git clone --no-checkout --depth 1 git@github.com:bryanheinz/dotfiles.git zsh-config
-cd zsh-config
+cd ~
+git clone --no-checkout --depth 1 git@github.com:bryanheinz/dotfiles.git .files
+cd ~/.files
 git sparse-checkout set zsh
 git checkout
-```
-
-2. Link the config
-
-```shell
-ln -s /usr/local/zsh-config/zsh/zshrc.zsh ~/.zshrc
+echo 'source "$HOME/.files/zsh/zshrc.zsh"' >> ~/.zshrc
 ```
