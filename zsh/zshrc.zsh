@@ -9,6 +9,16 @@ fi
 # https://unix.stackexchange.com/a/598210/307697
 # https://stackoverflow.com/a/39856256/7341009
 # https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org
+
+# add my custom completions
+if [[ -d "/usr/local/zsh-config/zsh/extras/completions" ]]; then
+    fpath+=("/usr/local/zsh-config/zsh/extras/completions")
+fi
+
+# add local completions
+if [[ -d "${HOME}/.local/share/zsh/completions" ]]; then
+    fpath+=("${HOME}/.local/share/zsh/completions")
+fi
 # -- #
 
 # !Functions & Alias'
@@ -116,14 +126,14 @@ if [[ -e $(which uvx) ]]; then
     eval "$(uvx --generate-shell-completion zsh)"
 fi
 
-# load my custom completions
-if [[ -d "/usr/local/zsh-config/zsh/extras/completions" ]]; then
-    fpath+=(/usr/local/zsh-config/zsh/extras/completions)
-fi
-
-# load local completions
-if [[ -d "${HOME}/.local/share/zsh/completions" ]]; then
-    fpath+=("${HOME}/.local/share/zsh/completions")
+# Apple container completion setup
+if [[ -e $(which container) ]]; then
+    if [[ ! -d "${HOME}/.local/share/zsh/completions" ]]; then
+        mkdir -p "${HOME}/.local/share/zsh/completions"
+    fi
+    if [[ ! -e "${HOME}/.local/share/zsh/completions/_container" ]]; then
+        container --generate-completion-script zsh > "${HOME}/.local/share/zsh/completions/_container"
+    fi
 fi
 # -- #
 
@@ -189,8 +199,3 @@ if [[ -f "$HOME/.love/cloud_rc.zsh" ]]; then
     . "$HOME/.love/cloud_rc.zsh"
 fi
 # -- #
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/bryan/.cache/lm-studio/bin"
-# End of LM Studio CLI section
-
