@@ -9,9 +9,6 @@ fi
 # https://unix.stackexchange.com/a/598210/307697
 # https://stackoverflow.com/a/39856256/7341009
 # https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org
-if [[ -d "/usr/local/zsh-config/zsh/completions" ]]; then
-    fpath+=(/usr/local/zsh-config/zsh/completions)
-fi
 # -- #
 
 # !Functions & Alias'
@@ -118,6 +115,16 @@ fi
 if [[ -e $(which uvx) ]]; then
     eval "$(uvx --generate-shell-completion zsh)"
 fi
+
+# load my custom completions
+if [[ -d "/usr/local/zsh-config/zsh/extras/completions" ]]; then
+    fpath+=(/usr/local/zsh-config/zsh/extras/completions)
+fi
+
+# load local completions
+if [[ -d "${HOME}/.local/share/zsh/completions" ]]; then
+    fpath+=("${HOME}/.local/share/zsh/completions")
+fi
 # -- #
 
 # !Git #
@@ -182,3 +189,8 @@ if [[ -f "$HOME/.love/cloud_rc.zsh" ]]; then
     . "$HOME/.love/cloud_rc.zsh"
 fi
 # -- #
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/bryan/.cache/lm-studio/bin"
+# End of LM Studio CLI section
+
