@@ -11,8 +11,8 @@ fi
 # https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org
 
 # add my custom completions
-if [[ -d "/usr/local/zsh-config/zsh/extras/completions" ]]; then
-    fpath+=("/usr/local/zsh-config/zsh/extras/completions")
+if [[ -d "${HOME}/.files/zsh/extras/completions" ]]; then
+    fpath+=("${HOME}/.files/zsh/extras/completions")
 fi
 
 # add local completions
@@ -24,8 +24,8 @@ fi
 # !Functions & Alias'
 # import personal ZSH functions and alias'
 # https://superuser.com/a/1140782
-. "/usr/local/zsh-config/zsh/extras/alias.zsh"
-. "/usr/local/zsh-config/zsh/extras/functions.zsh"
+. "${HOME}/.files/zsh/extras/alias.zsh"
+. "${HOME}/.files/zsh/extras/functions.zsh"
 # -- #
 
 
